@@ -37,12 +37,6 @@ void wait_for_pid1() {
     // If a failure occurs here, we don't want the kernel to panic so that the user can check error
     // messages.
 
-    // No error checking around logging
-    int log_fd = open("/run/dboot/dboot.log", O_WRONLY | O_CREAT, 0600);
-    if (log_fd == -1) {
-        dup2(log_fd, 2);
-    }
-
     int console_fd = open("/dev/console", O_RDWR);
     if (console_fd == -1) {
         perror("Failed to open /dev/console");
