@@ -301,12 +301,6 @@ int main(int argc, char **argv) {
     }
     container_id[container_id_length] = '\0';
 
-    if (pipe(fds) == -1) {
-        perror("Failed to create pipe");
-        umount("/run/dboot/root");
-        return 2;
-    }
-
     fputs("Copying root filesystem to tmpfs...\n", stderr);
     fflush(stderr);
 
