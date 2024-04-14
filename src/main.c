@@ -305,7 +305,7 @@ int main(int argc, char **argv) {
     fflush(stderr);
 
     char cmdline[4096];
-    sprintf(cmdline, "docker cp %s:/ - | dd status=progress | tar xf /dev/stdin -C /run/dboot/root", container_id);
+    sprintf(cmdline, "docker cp %s:/ - | dd status=progress bs=8M | tar xf /dev/stdin -C /run/dboot/root", container_id);
     int cp_is_success = system(cmdline) == 0;
 
     sprintf(cmdline, "docker rm %s >/dev/null", container_id);
