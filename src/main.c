@@ -313,7 +313,7 @@ int main(int argc, char **argv) {
         return 2;
     }
 
-    fputs("Copying root filesystem to rootfs...\n", stderr);
+    fputs("Copying root filesystem to tmpfs...\n", stderr);
     fflush(stderr);
 
     char cmdline[4096];
