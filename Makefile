@@ -1,4 +1,4 @@
-all: dexec
+all: docker-boot
 
-dexec: src/main.c
+docker-boot: src/main.c
 	$(CC) $^ -o $@ -O2 -Wall
