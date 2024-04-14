@@ -289,7 +289,7 @@ int main(int argc, char **argv) {
         return 2;
     }
     char container_id[256];
-    ssize_t container_id_length = read(fds[0], container_id, sizeof(container_id));
+    ssize_t container_id_length = read(fds[0], container_id, sizeof(container_id) - 1);
     if (container_id_length == -1) {
         perror("Failed to receive container ID from docker create");
         umount("/run/dboot/root");
