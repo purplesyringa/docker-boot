@@ -76,7 +76,7 @@ void wait_for_pid1() {
     fputs("dboot: docker-boot is now online\n", stderr);
     fflush(stdout);
 
-    // Close all fds, include non-loexec
+    // Close all fds, include non-cloexec
     if (syscall(SYS_close_range, 3, ~0, 0) == -1) {
         perror("dboot: Failed to close fds");
         goto err;
