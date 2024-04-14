@@ -1,5 +1,7 @@
 # docker-boot
 
+https://github.com/purplesyringa/docker-boot/assets/16370781/0f2a24e1-7c5f-47a6-9730-479f853af25a
+
 > Like `execve`, but for userspace.
 
 docker-boot replaces your current running system with an in-memory root filesystem constructed from a Docker image.
