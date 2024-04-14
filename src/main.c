@@ -365,6 +365,7 @@ int main(int argc, char **argv) {
     }
     close(etc_resolv_conf_fd);
 
+    // Sanity checks
     int root_fd = open("/run/dboot/root", __O_PATH);
     if (root_fd == -1) {
         perror("Failed to open /run/dboot/root");
@@ -380,8 +381,6 @@ int main(int argc, char **argv) {
     }
     close(root_fd);
     close(init_fd);
-
-    // Sanity checks
     int console_fd = open("/dev/console", O_RDWR);
     if (console_fd == -1) {
         perror("Failed to open /dev/console");
