@@ -41,7 +41,7 @@ $ sudo docker-boot ubuntu /bin/bash -c "mount -t proc proc proc; mount -t sysfs 
 
 Just do `make`.
 
-You're going to need `docker`, `swapoff`, `tar`, and `pv` installed.
+You're going to need `docker`, `swapoff`, `tar`, and `dd` installed.
 
 
 ## Why?
