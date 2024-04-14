@@ -74,7 +74,7 @@ void wait_for_pid1() {
     // We are now attached to the virtual terminal the user supposedly has access to.
 
     fputs("dboot: docker-boot is now online\n", stderr);
-    fflush(stdout);
+    fflush(stderr);
 
     // Close all fds, include non-cloexec
     if (syscall(SYS_close_range, 3, ~0, 0) == -1) {
@@ -117,7 +117,7 @@ void wait_for_pid1() {
     }
 
     fputs("dboot: Sending SIGTERM to all processes\n", stderr);
-    fflush(stdout);
+    fflush(stderr);
     if (kill(-1, SIGTERM) == -1) {
         perror("dboot: Failed to send SIGTERM");
         goto err;
@@ -127,7 +127,7 @@ void wait_for_pid1() {
     usleep(3000000);
 
     fputs("dboot: Sending SIGKILL to all processes\n", stderr);
-    fflush(stdout);
+    fflush(stderr);
     if (kill(-1, SIGKILL) == -1) {
         perror("Failed to send SIGKILL");
         goto err;
