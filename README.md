@@ -48,6 +48,6 @@ You're going to need `docker`, `swapoff`, `tar`, and `dd` installed.
 
 ## Why?
 
-1. So that those dirty NixOS evangelists can suck dick.
+1. I'm a Nix contrarian, so naturally I wanted *something* to be to Docker like NixOS is to Nix. docker-boot fills this niche.
 2. Injecting into `init` is based, I've always wanted to do that; this project is my excuse.
 3. If you need to move partitions on your boot disk, you probably want to run a system off RAM. This is typically accomplished by creating a tmpfs, `debootstrap`ing an OS into it, `pivot_root`ing and killing services that use the real disk. That's a bit ridiculous of a manual; this project attempts to reduce the gap.
