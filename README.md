@@ -30,9 +30,11 @@ Example without GUI:
 **Dockerfile**
 
 ```shell
-$ sudo docker-boot ubuntu /bin/bash
+$ sudo docker-boot ubuntu /bin/bash -c "mount -t proc proc proc; mount -t sysfs sys sys; exec bash -i"
 <The host system is shut down, Ubuntu starts in single-user mode>
 ```
+
+(Or make `systemd` mount the filesystems for you if you're feeling adventurous.)
 
 
 ## Building
