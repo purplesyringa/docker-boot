@@ -23,7 +23,7 @@ RUN echo "InputMethod=" >/etc/sddm.conf
 $ docker build . -t workstation
 <...>
 
-$ sudo docker-boot workstation /bin/systemd
+$ sudo docker-boot workstation /usr/lib/systemd/systemd
 <The host system is shut down, Ubuntu with lightdm/KDE starts>
 ```
 
